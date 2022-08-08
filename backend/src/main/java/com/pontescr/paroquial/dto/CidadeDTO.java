@@ -9,22 +9,22 @@ public class CidadeDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
-	private String name;
+	private String nome;
 	
 	private EstadoDTO estadoDTO;
 	
 	public CidadeDTO() {
 	}
 
-	public CidadeDTO(Long id, String name, EstadoDTO estadoDTO) {
+	public CidadeDTO(Long id, String nome, EstadoDTO estadoDTO) {
 		this.id = id;
-		this.name = name;
+		this.nome = nome;
 		this.estadoDTO = estadoDTO;
 	}
 	
 	public CidadeDTO(Cidade entity) {
 		id = entity.getId();
-		name = entity.getName();
+		nome = entity.getNome();
 		estadoDTO = new EstadoDTO(entity.getEstado());
 	}
 
@@ -36,12 +36,12 @@ public class CidadeDTO implements Serializable{
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public EstadoDTO getEstadoDTO() {

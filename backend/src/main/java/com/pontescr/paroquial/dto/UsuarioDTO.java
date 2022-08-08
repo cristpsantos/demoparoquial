@@ -2,25 +2,28 @@ package com.pontescr.paroquial.dto;
 
 import java.io.Serializable;
 
-import com.pontescr.paroquial.entities.Estado;
+import com.pontescr.paroquial.entities.Usuario;
 
-public class EstadoDTO implements Serializable{
+public class UsuarioDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
 	private String nome;
+	private String login;
 	
-	public EstadoDTO() {
+	public UsuarioDTO() {
 	}
 
-	public EstadoDTO(Long id, String nome) {
+	public UsuarioDTO(Long id, String nome, String login) {
 		this.id = id;
 		this.nome = nome;
+		this.login = login;
 	}
 	
-	public EstadoDTO(Estado entity) {
+	public UsuarioDTO(Usuario entity) {
 		id = entity.getId();
 		nome = entity.getNome();
+		login = entity.getLogin();
 	}
 
 	public Long getId() {
@@ -39,4 +42,11 @@ public class EstadoDTO implements Serializable{
 		this.nome = nome;
 	}
 
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
 }

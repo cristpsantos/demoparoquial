@@ -3,37 +3,36 @@ package com.pontescr.paroquial.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "tb_cidades")
-public class Cidade implements Serializable{
+@Table(name = "tb_usuarios")
+public class Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "estado_id")
-	private Estado estado;
+	@Column(unique = true)
+	private String login;
 	
-	public Cidade() {
+	private Integer senha;
+	
+	public Usuario() {
 	}
 
-	public Cidade(Long id, String name, Estado estado) {
+	public Usuario(Long id, String nome, String login, Integer senha) {
 		this.id = id;
-		this.nome = name;
-		this.estado = estado;
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
 	}
 
 	public Long getId() {
@@ -52,12 +51,20 @@ public class Cidade implements Serializable{
 		this.nome = nome;
 	}
 
-	public Estado getEstado() {
-		return estado;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public Integer getSenha() {
+		return senha;
+	}
+
+	public void setSenha(Integer senha) {
+		this.senha = senha;
 	}
 
 	@Override
@@ -73,7 +80,7 @@ public class Cidade implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cidade other = (Cidade) obj;
+		Usuario other = (Usuario) obj;
 		return Objects.equals(id, other.id);
 	}
 }
