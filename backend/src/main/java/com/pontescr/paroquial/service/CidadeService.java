@@ -1,11 +1,12 @@
 package com.pontescr.paroquial.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pontescr.paroquial.dto.CidadeDTO;
 import com.pontescr.paroquial.entities.Cidade;
 import com.pontescr.paroquial.repositories.CidadeRepository;
 
@@ -16,8 +17,8 @@ public class CidadeService {
 	private CidadeRepository repository;
 	
 	@Transactional(readOnly = true)
-	public List<Cidade> findAll() {
-		List<Cidade> list = repository.findAll();
-		return list;
+	public Page<CidadeDTO> findAll(Pageable pageable) {
+		Page<Cidade> list = repository.findAll(pageable);
+		return list.map(x -> new CidadeDTO(x));
 	}
 }
