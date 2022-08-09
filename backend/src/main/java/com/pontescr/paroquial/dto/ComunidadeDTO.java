@@ -8,9 +8,9 @@ public class ComunidadeDTO {
 	private String nome;
 	private String endereco;
 	
-	private ParoquiaDTO paroquiaDTO;
-	
 	private CidadeDTO cidadeDTO;
+	
+	private ParoquiaDTO paroquiaDTO;
 	
 	public ComunidadeDTO() {
 	}
@@ -54,15 +54,7 @@ public class ComunidadeDTO {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
-	public ParoquiaDTO getParoquiaDTO() {
-		return paroquiaDTO;
-	}
-
-	public void setParoquiaDTO(ParoquiaDTO paroquiaDTO) {
-		this.paroquiaDTO = paroquiaDTO;
-	}
-
+	
 	public CidadeDTO getCidadeDTO() {
 		return cidadeDTO;
 	}
@@ -70,6 +62,12 @@ public class ComunidadeDTO {
 	public void setCidadeDTO(CidadeDTO cidadeDTO) {
 		this.cidadeDTO = cidadeDTO;
 	}
-	
-	
+
+	public ParoquiaDTO getParoquiaDTO() {
+		return paroquiaDTO;
+	}
+
+	public void setParoquiaDTO(ParoquiaDTO paroquiaDTO) {
+		this.paroquiaDTO = paroquiaDTO;
+	}	
 }

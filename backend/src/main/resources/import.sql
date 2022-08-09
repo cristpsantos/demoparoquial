@@ -17,3 +17,9 @@ INSERT INTO tb_usuarios(nome, login, senha) VALUES ('Laura Damasceno', 'laura', 
 INSERT INTO tb_paroquias(nome, endereco, cidade_id) VALUES ('Paroquia Cristo Rei', 'Av. Pq. Atheneu Unidade 205', 1);
 
 INSERT INTO tb_comunidades(nome, endereco, paroquia_id, cidade_id) VALUES ('Nossa Senhora Aparecida', 'Praça da Feira Unidade 101', 1, 1);
+INSERT INTO tb_comunidades(nome, endereco, paroquia_id, cidade_id) VALUES ('Matriz', 'Av. Pq Atheneu Unidade 205', 1, 1);
+INSERT INTO tb_comunidades(nome, endereco, paroquia_id, cidade_id) VALUES ('San Damiano', 'Avenida Bela Vista', 1, 2);
+
+INSERT INTO tb_missas(horario, comunidade_id) VALUES ('07:30', 3);
+INSERT INTO tb_missas(horario, comunidade_id) VALUES ('19:30', 2);
+INSERT INTO tb_missas(horario, comunidade_id) VALUES ('19:30', 1);
