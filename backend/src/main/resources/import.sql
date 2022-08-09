@@ -15,3 +15,5 @@ INSERT INTO tb_usuarios(nome, login, senha) VALUES ('Lanna Beatriz', 'lanna', '1
 INSERT INTO tb_usuarios(nome, login, senha) VALUES ('Laura Damasceno', 'laura', '123456');
 
 INSERT INTO tb_paroquias(nome, endereco, cidade_id) VALUES ('Paroquia Cristo Rei', 'Av. Pq. Atheneu Unidade 205', 1);
+
+INSERT INTO tb_comunidades(nome, endereco, paroquia_id, cidade_id) VALUES ('Nossa Senhora Aparecida', 'Praça da Feira Unidade 101', 1, 1);
