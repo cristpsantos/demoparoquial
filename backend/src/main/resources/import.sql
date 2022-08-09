@@ -23,3 +23,7 @@ INSERT INTO tb_comunidades(nome, endereco, paroquia_id, cidade_id) VALUES ('San 
 INSERT INTO tb_missas(horario, comunidade_id) VALUES ('07:30', 3);
 INSERT INTO tb_missas(horario, comunidade_id) VALUES ('19:30', 2);
 INSERT INTO tb_missas(horario, comunidade_id) VALUES ('19:30', 1);
+
+INSERT INTO tb_dizimistas(nome, endereco, telefone, nascimento, cidade_id) VALUES ('Cristiano Pontes', 'Av. Parque Atheneu', '62 99999-9999', '1981-11-15', 1);
+INSERT INTO tb_dizimistas(nome, endereco, telefone, nascimento, cidade_id) VALUES ('Larissa Pontes', 'Av. Parque Atheneu', '62 99999-9998', '1986-05-25', 1);
+INSERT INTO tb_dizimistas(nome, endereco, telefone, nascimento, cidade_id) VALUES ('Marilda Pontes', 'Rua 11 lote 21 Unidade 203 Parque Atheneu', '62 99999-9997', '1956-05-20', 6);
