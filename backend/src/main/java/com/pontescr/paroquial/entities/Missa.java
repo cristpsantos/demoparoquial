@@ -4,12 +4,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,17 +19,12 @@ public class Missa implements Serializable{
 	private Long id;
 	private String horario;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "comunidade_id")
-	private Comunidade comunidade;
-	
 	public Missa() {
 	}
 
-	public Missa(Long id, String horario, Comunidade comunidade) {
+	public Missa(Long id, String horario) {
 		this.id = id;
 		this.horario = horario;
-		this.comunidade = comunidade;
 	}
 
 	public Long getId() {
@@ -49,14 +41,6 @@ public class Missa implements Serializable{
 
 	public void setHorario(String horario) {
 		this.horario = horario;
-	}
-
-	public Comunidade getComunidade() {
-		return comunidade;
-	}
-
-	public void setComunidade(Comunidade comunidade) {
-		this.comunidade = comunidade;
 	}
 
 	@Override
