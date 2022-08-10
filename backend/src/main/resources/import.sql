@@ -28,7 +28,7 @@ INSERT INTO tb_dizimistas(nome, endereco, telefone, nascimento, cidade_id) VALUE
 INSERT INTO tb_dizimistas(nome, endereco, telefone, nascimento, cidade_id) VALUES ('Larissa Pontes', 'Av. Parque Atheneu', '62 99999-9998', '1986-05-25', 1);
 INSERT INTO tb_dizimistas(nome, endereco, telefone, nascimento, cidade_id) VALUES ('Marilda Pontes', 'Rua 11 lote 21 Unidade 203 Parque Atheneu', '62 99999-9997', '1956-05-20', 6);
 
-INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-07-31', '2022-06-01', 'DIZIMO', 50.00, 2, 1, 3, 4);
-INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-07-31', '2022-05-01', 'DIZIMO', 50.00, 2, 1, 3, 4);
-INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-07-31', '2022-07-01', 'DIZIMO', 100.00, 1, 1, 3, 3);
-INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-08-07', '2022-03-01', 'DIZIMO', 150.00, 1, 2, 2, 3);
+INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-07-31', '2022-06-01', 0, 50.00, 2, 1, 3, 4);
+INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-07-31', '2022-05-01', 0, 50.00, 2, 1, 3, 4);
+INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-07-31', '2022-07-01', 0, 100.00, 1, 1, 3, 3);
+INSERT INTO tb_lancamentoreceitas(data_devolucao, mes_referente, tipo_receita, valor, dizimista_id, missa_id, comunidade_id, usuario_id) VALUES ('2022-08-07', '2022-03-01', 0, 150.00, 1, 2, 2, 3);
