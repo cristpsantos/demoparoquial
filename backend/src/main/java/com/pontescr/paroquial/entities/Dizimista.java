@@ -28,8 +28,8 @@ public class Dizimista implements Serializable{
 	@Column(unique = true)
 	private String telefone;
 	private LocalDate nascimento;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
+
+	@ManyToOne
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 	

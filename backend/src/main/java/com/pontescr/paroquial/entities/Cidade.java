@@ -30,6 +30,11 @@ public class Cidade implements Serializable{
 	public Cidade() {
 	}
 
+	public Cidade(Long id) {
+		this.id = id;
+		this.estado = new Estado();
+	}
+
 	public Cidade(Long id, String name, Estado estado) {
 		this.id = id;
 		this.nome = name;
