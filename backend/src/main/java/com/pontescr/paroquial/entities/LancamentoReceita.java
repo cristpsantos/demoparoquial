@@ -25,15 +25,15 @@ public class LancamentoReceita implements Serializable{
 	@JoinColumn(name = "dizimista_id")
 	private Dizimista dizimista;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "missa_id")
 	private Missa missa;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "comunidade_id")
 	private Comunidade comunidade;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	

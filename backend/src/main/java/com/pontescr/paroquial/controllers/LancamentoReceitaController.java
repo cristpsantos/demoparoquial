@@ -22,12 +22,6 @@ public class LancamentoReceitaController {
 	private LancamentoReceitaService service;
 
 	@GetMapping
-	public ResponseEntity<Page<LancamentoReceitaBasicoDTO>> findAllDizmistas(Pageable pageable) {
-		Page<LancamentoReceitaBasicoDTO> list = service.findAllBasico(pageable);
-		return ResponseEntity.ok().body(list);
-	}
-
-	@GetMapping(value = "/dizimistas")
 	public ResponseEntity<Page<LancamentoReceitaFullDTO>> findAll(Pageable pageable) {
 		Page<LancamentoReceitaFullDTO> list = service.findAll(pageable);
 		return ResponseEntity.ok().body(list);

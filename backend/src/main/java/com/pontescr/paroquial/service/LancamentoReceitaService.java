@@ -44,9 +44,15 @@ public class LancamentoReceitaService {
 		entidade.setMesReferente(dto.getMesReferente());
 		entidade.setTipoReceita(dto.getTipoReceita());
 		entidade.setValor(dto.getValor());
-		entidade.setDizimista(new Dizimista(dto.getDizimistaDTO().getId()));
+		System.out.println("Teste" + dto.getDizimistaDTO().getId());
 		entidade.setUsuario(new Usuario(dto.getUsuarioDTO().getId()));
 		entidade.setMissa(new Missa(dto.getMissaDTO().getId()));
 		entidade.setComunidade(new Comunidade(dto.getComunidadeDTO().getId()));
+
+		if (dto.getDizimistaDTO().getId() != null) {
+			entidade.setDizimista(new Dizimista(dto.getDizimistaDTO().getId()));
+		} else {
+			entidade.setDizimista(null);
+		}
 	}
 }

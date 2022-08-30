@@ -3,6 +3,7 @@ package com.pontescr.paroquial.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import com.pontescr.paroquial.entities.Dizimista;
 import com.pontescr.paroquial.entities.LancamentoReceita;
 import com.pontescr.paroquial.enums.Receitas;
 
@@ -44,11 +45,16 @@ public class LancamentoReceitaFullDTO implements Serializable{
 		dataDevolucao = entity.getDataDevolucao();
 		mesReferente = entity.getMesReferente();
 		valor = entity.getValor();
-		dizimistaDTO = new DizimistaDTO(entity.getDizimista());
 		missaDTO = new MissaDTO(entity.getMissa());
 		comunidadeDTO = new ComunidadeDTO(entity.getComunidade());
 		usuarioDTO = new UsuarioDTO(entity.getUsuario());
 		tipoReceita = entity.getTipoReceita();
+
+		if (entity.getDizimista() != null) {
+			dizimistaDTO = new DizimistaDTO(entity.getDizimista());
+		} else {
+			dizimistaDTO = null;
+		}
 	}
 
 	public Long getId() {
