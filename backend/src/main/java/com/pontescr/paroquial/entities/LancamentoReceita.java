@@ -4,14 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.pontescr.paroquial.enums.Receitas;
 
@@ -28,7 +21,7 @@ public class LancamentoReceita implements Serializable{
 	private Double valor;
 	private Receitas tipoReceita;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "dizimista_id")
 	private Dizimista dizimista;
 	

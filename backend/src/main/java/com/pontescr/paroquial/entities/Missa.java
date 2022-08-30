@@ -22,6 +22,9 @@ public class Missa implements Serializable{
 	public Missa() {
 	}
 
+	public Missa(Long id) {
+		this.id = id;
+	}
 	public Missa(Long id, String horario) {
 		this.id = id;
 		this.horario = horario;

@@ -30,6 +30,11 @@ public class Paroquia implements Serializable{
 	public Paroquia() {
 	}
 
+	public Paroquia(Long id) {
+		this.id = id;
+		this.cidade = new Cidade(id);
+	}
+
 	public Paroquia(Long id, String nome, String endereco, Cidade cidade) {
 		this.id = id;
 		this.nome = nome;

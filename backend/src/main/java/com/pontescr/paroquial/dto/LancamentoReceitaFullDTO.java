@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import com.pontescr.paroquial.entities.LancamentoReceita;
 import com.pontescr.paroquial.enums.Receitas;
 
-public class LancamentoReceitaDTO implements Serializable{
+public class LancamentoReceitaFullDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
@@ -23,11 +23,11 @@ public class LancamentoReceitaDTO implements Serializable{
 	
 	private UsuarioDTO usuarioDTO;
 	
-	public LancamentoReceitaDTO() {
+	public LancamentoReceitaFullDTO() {
 	}
 
-	public LancamentoReceitaDTO(Long id, LocalDate dataDevolucao, LocalDate mesReferente, Receitas tipoReceita, Double valor,
-			DizimistaDTO dizimistaDTO, MissaDTO missaDTO, ComunidadeDTO comunidadeDTO, UsuarioDTO usuarioDTO) {
+	public LancamentoReceitaFullDTO(Long id, LocalDate dataDevolucao, LocalDate mesReferente, Receitas tipoReceita, Double valor,
+									DizimistaDTO dizimistaDTO, MissaDTO missaDTO, ComunidadeDTO comunidadeDTO, UsuarioDTO usuarioDTO) {
 		this.id = id;
 		this.dataDevolucao = dataDevolucao;
 		this.mesReferente = mesReferente;
@@ -39,7 +39,7 @@ public class LancamentoReceitaDTO implements Serializable{
 		this.tipoReceita = tipoReceita;
 	}
 	
-	public LancamentoReceitaDTO(LancamentoReceita entity) {
+	public LancamentoReceitaFullDTO(LancamentoReceita entity) {
 		id = entity.getId();
 		dataDevolucao = entity.getDataDevolucao();
 		mesReferente = entity.getMesReferente();

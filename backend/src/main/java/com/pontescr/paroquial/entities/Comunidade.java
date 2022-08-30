@@ -1,5 +1,7 @@
 package com.pontescr.paroquial.entities;
 
+import com.pontescr.paroquial.dto.CidadeDTO;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -31,6 +33,12 @@ public class Comunidade implements Serializable{
 	private Cidade cidade;
 	
 	public Comunidade() {
+	}
+
+	public Comunidade(Long id) {
+		this.id = id;
+		this.paroquia = new Paroquia(id);
+		this.cidade = new Cidade(id);
 	}
 
 	public Comunidade(Long id, String nome, String endereco, Paroquia paroquia, Cidade cidade) {
