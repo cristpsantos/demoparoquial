@@ -12,6 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pontescr.paroquial.dto.LancamentoReceitaFullDTO;
 import com.pontescr.paroquial.repositories.LancamentoReceitaRepository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class LancamentoReceitaService {
 
@@ -19,15 +22,21 @@ public class LancamentoReceitaService {
 	private LancamentoReceitaRepository repository;
 
 	@Transactional(readOnly = true)
-	public Page<LancamentoReceitaBasicoDTO> findAllBasico(Pageable pageable) {
-		Page<LancamentoReceita> list = repository.findAll(pageable);
-		return list.map(x -> new LancamentoReceitaBasicoDTO(x));
-	}
-
-	@Transactional(readOnly = true)
 	public Page<LancamentoReceitaFullDTO> findAll(Pageable pageable) {
 		Page<LancamentoReceita> list = repository.findAll(pageable);
 		return list.map(x -> new LancamentoReceitaFullDTO(x));
+	}
+
+	@Transactional(readOnly = true)
+	public List<LancamentoReceitaFullDTO> findAllLancamentosDizimistas() {
+		List<LancamentoReceita> list = repository.findAllLancamentosDizimistas();
+		return list.stream().map(x -> new LancamentoReceitaFullDTO(x)).collect(Collectors.toList());
+	}
+
+	@Transactional(readOnly = true)
+	public List<LancamentoReceitaBasicoDTO> findAllfindAllLancamentosOutrasReceitas() {
+		List<LancamentoReceita> list = repository.findAllLancamentosOutrasReceitas();
+		return list.stream().map(x -> new LancamentoReceitaBasicoDTO(x)).collect(Collectors.toList());
 	}
 
 	@Transactional

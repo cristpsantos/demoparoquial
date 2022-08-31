@@ -13,6 +13,7 @@ import com.pontescr.paroquial.service.LancamentoReceitaService;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/lancamentos")
@@ -26,6 +27,19 @@ public class LancamentoReceitaController {
 		Page<LancamentoReceitaFullDTO> list = service.findAll(pageable);
 		return ResponseEntity.ok().body(list);
 	}
+
+	@GetMapping(value = "/dizimistas")
+	public ResponseEntity<List<LancamentoReceitaFullDTO>> findAllLancamentosDizimistas() {
+		List<LancamentoReceitaFullDTO> list = service.findAllLancamentosDizimistas();
+		return ResponseEntity.ok().body(list);
+	}
+
+	@GetMapping(value = "/outrasreceitas")
+	public ResponseEntity<List<LancamentoReceitaBasicoDTO>> findAllLancamentosOutrasReceitas() {
+		List<LancamentoReceitaBasicoDTO> list = service.findAllfindAllLancamentosOutrasReceitas();
+		return ResponseEntity.ok().body(list);
+	}
+
 
 	@PostMapping
 	public ResponseEntity<LancamentoReceitaFullDTO> insert(@RequestBody LancamentoReceitaFullDTO dto) {
